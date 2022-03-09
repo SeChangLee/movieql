@@ -1,0 +1,19 @@
+type User {
+  id: Int!
+  name: String!
+  age: Int!
+  gender: String!
+}
+
+type Query {
+  users: [User]!
+  user(id: Int!): User
+}
+
+# ! 는 필수
+
+# 데이터베이스 상태가 변할때 사용
+type Mutation {
+  addUser(name: String!, age: Int!, gender: String!): User!
+  deleteUser(id: Int!): Boolean!
+}
